@@ -1,5 +1,6 @@
 {
-
+  "name": "sveltekit-static-site",
+	"version": "0.0.1",
   "private": true,
   "license": "MIT",
   "type": "module",
@@ -9,8 +10,8 @@
     "deploy-gh-pages": "touch build/.nojekyll && gh-pages -d build -t true"
   },
   "devDependencies": {
-    "@sveltejs/adapter-static": "next",
-    "@sveltejs/kit": "next",
+    "@sveltejs/adapter-static": "1.0.0-next.30",
+    "@sveltejs/kit": "1.0.0-next.331",
     "gh-pages": "^4.0.0",
     "svelte": "^3.48.0"
   }
