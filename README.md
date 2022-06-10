@@ -84,7 +84,7 @@ The last step is to add a `.nojekyll` file to the build folder to [bypass Jekyll
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
-    "deploy-gh-pages": "svelte-kit build && touch build/.nojekyll && cp -r build docs"
+    "deploy-gh-pages": "rm -rf docs && svelte-kit build && touch build/.nojekyll && cp -r build docs"
   }
 }
 ```
@@ -114,7 +114,7 @@ Now if you want to host on github pages follow the steps below:
 ```diff
   kit: {
     + paths: {
-    +   base: process.env.NODE_ENV === "production" ? "/ sveltekit-static-site" : "",
+    +   base: process.env.NODE_ENV === "production" ? "/sveltekit-static-site" : "",
     + }
   }
 ```
