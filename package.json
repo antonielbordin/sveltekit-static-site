@@ -1,0 +1,17 @@
+{
+
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "deploy-gh-pages": "touch build/.nojekyll && gh-pages -d build -t true"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-static": "next",
+    "@sveltejs/kit": "next",
+    "gh-pages": "^4.0.0",
+    "svelte": "^3.48.0"
+  }
+}
