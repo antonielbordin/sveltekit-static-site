@@ -50,9 +50,12 @@ const config = {
     prerender: {
       default: true,
     },
-+   paths: {
++ /*  
++  // enable this base url for publish in github pages  
++  paths: {
 +     base: process.env.NODE_ENV === "production" ? "/sveltekit-static-site" : "",
 +   },
++ */
   },
 };
 
@@ -81,7 +84,7 @@ The last step is to add a `.nojekyll` file to the build folder to [bypass Jekyll
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
-    "deploy-gh-pages": "touch build/.nojekyll && gh-pages -d build -t true"
+    "deploy-gh-pages": "svelte-kit build && touch build/.nojekyll && cp -r build docs"
   }
 }
 ```
@@ -99,17 +102,26 @@ cd my-app && npm install
 
 ## Deploying to GitHub Pages or static hosting
 
-First, build the app by running `npm run build`.
+If you want to use static hosting first, 
+build the application by running `npm run build`.
 
-If you want to use static hosting just copy the contents of 
-your docs folder.
+Then just upload the content of your build folder.
 
-Now if you want to host on github pages run the command 
-`npm run deploy-gh-pages` after that just go up on github.
+Now if you want to host on github pages follow the steps below:
 
+- 1) Enable 
 
+```diff
+  kit: {
+    + paths: {
+    +   base: process.env.NODE_ENV === "production" ? "/ sveltekit-static-site" : "",
+    + }
+  }
+```
 
+in the `svelte.config.js` file
 
+- 2) Run the command `npm run deploy-gh-pages`
 
-
+- 3) After that go to your repository settings and enable the pages in the docs directory now just go up on github.
 

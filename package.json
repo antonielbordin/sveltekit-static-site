@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
-    "deploy-gh-pages": "touch build/.nojekyll && cp -r build docs"
+    "deploy-gh-pages": "rm -rf docs && svelte-kit build && touch build/.nojekyll && cp -r build docs"
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "next",
