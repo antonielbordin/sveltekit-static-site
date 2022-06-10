@@ -97,9 +97,15 @@ npx degit antonielbordin/sveltekit-static-site my-app
 cd my-app && npm install
 ```
 
-## Deploying to GitHub Pages
+## Deploying to GitHub Pages or static hosting
 
 First, build the app by running `npm run build`.
+
+If you want to use static hosting just copy the contents of 
+your docs folder.
+
+Now if you want to host on github pages run the command 
+`npm run deploy-gh-pages` after that just go up on github.
 
 
 
