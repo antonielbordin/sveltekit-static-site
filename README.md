@@ -124,4 +124,3 @@ in the `svelte.config.js` file
 - 2) Run the command `npm run deploy-gh-pages`
 
 - 3) After that go to your repository settings and enable the pages in the docs directory now just go up on github.
-

@@ -11,7 +11,7 @@ const config = {
     // enable this base url for publish in github pages
     paths: {      
       base: process.env.NODE_ENV === "production" ? "/sveltekit-static-site" : "",
-    },
+    }
     */    
   },
 };
