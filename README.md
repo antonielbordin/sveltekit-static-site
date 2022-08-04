@@ -13,16 +13,18 @@ Use the [SvelteKit static adapter](https://github.com/sveltejs/kit/tree/master/p
   "devDependencies": {
 +   "@sveltejs/adapter-static": "next",
     "@sveltejs/kit": "next",
-    "svelte": "^3.46.4"
+    "svelte": "^3.46.0",
++   "vite": "3.0.0"
   }
 ```
 
 **svelte.config.js**
 
 ```diff
+/** @type {import('@sveltejs/kit').Config} */
+
 import adapter from "@sveltejs/adapter-static";
 
-/** @type {import('@sveltejs/kit').Config} */
 const config = {
   kit: {
 +   adapter: adapter(),
@@ -41,9 +43,10 @@ export default config;
 - `kit.paths.base` should be your repo URL subpath (see the [Vite docs](https://vitejs.dev/guide/static-deploy.html#github-pages))
 
 ```diff
+/** @type {import('@sveltejs/kit').Config} */
+
 import adapter from "@sveltejs/adapter-static";
 
-/** @type {import('@sveltejs/kit').Config} */
 const config = {
   kit: {
     adapter: adapter(),
@@ -82,9 +85,9 @@ The last step is to add a `.nojekyll` file to the build folder to [bypass Jekyll
 ```json
 {
   "scripts": {
-    "dev": "svelte-kit dev",
-    "build": "svelte-kit build",
-    "deploy-gh-pages": "rm -rf docs && svelte-kit build && touch build/.nojekyll && cp -r build docs"
+    "dev": "vite dev",
+    "build": "vite build",
+    "deploy-gh-pages": "rm -rf docs && vite build && touch build/.nojekyll && cp -r build docs"
   }
 }
 ```
