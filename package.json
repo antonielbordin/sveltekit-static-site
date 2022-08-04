@@ -5,14 +5,16 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "dev": "svelte-kit dev",
-    "build": "svelte-kit build",
-    "deploy-gh-pages": "rm -rf docs && svelte-kit build && touch build/.nojekyll && cp -r build docs"
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy-gh-pages": "rm -rf docs && vite build && touch build/.nojekyll && cp -r build docs"
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "next",
     "@sveltejs/kit": "next",
     "gh-pages": "^4.0.0",
-    "svelte": "^3.48.0"
+    "svelte": "^3.46.0",
+    "vite": "3.0.0"
   }
 }
