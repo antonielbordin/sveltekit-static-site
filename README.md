@@ -21,9 +21,9 @@ Use the [SvelteKit static adapter](https://github.com/sveltejs/kit/tree/master/p
 **svelte.config.js**
 
 ```diff
-/** @type {import('@sveltejs/kit').Config} */
-
 import adapter from "@sveltejs/adapter-static";
+
+/** @type {import('@sveltejs/kit').Config} */
 
 const config = {
   kit: {
@@ -43,9 +43,9 @@ export default config;
 - `kit.paths.base` should be your repo URL subpath (see the [Vite docs](https://vitejs.dev/guide/static-deploy.html#github-pages))
 
 ```diff
-/** @type {import('@sveltejs/kit').Config} */
-
 import adapter from "@sveltejs/adapter-static";
+
+/** @type {import('@sveltejs/kit').Config} */
 
 const config = {
   kit: {
